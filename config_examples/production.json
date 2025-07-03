@@ -1,0 +1,80 @@
+{
+    "DEBUG": false,
+    "HOST": "0.0.0.0",
+    "PORT": 80,
+    "WORKERS": 4,
+
+    "DATABASE": {
+        "ENGINE": "aiomysql",
+        "NAME": "cyclone_prod",
+        "USER": "cyclone_user",
+        "PASSWORD": "secure_password_here",
+        "HOST": "db.example.com",
+        "PORT": 3306,
+        "POOL_SIZE": 20,
+        "MAX_OVERFLOW": 30
+    },
+
+    "MIDDLEWARE": [
+        "cyclone.middleware.SecurityMiddleware",
+        "cyclone.middleware.CORSMiddleware",
+        "cyclone.middleware.CompressionMiddleware",
+        "cyclone.middleware.RateLimitMiddleware",
+        "myapp.middleware.ProductionMiddleware"
+    ],
+
+    "CACHE": {
+        "BACKEND": "redis",
+        "TIMEOUT": 3600,
+        "MAX_ENTRIES": 10000,
+        "REDIS_URL": "redis://redis.example.com:6379/0"
+    },
+
+    "SECRET_KEY": "production-secret-key-change-this",
+    "ALLOWED_HOSTS": [
+        "example.com",
+        "www.example.com",
+        "api.example.com"
+    ],
+
+    "STATIC_URL": "/static/",
+    "STATIC_ROOT": "/var/www/static",
+
+    "TEMPLATES": {
+        "DIRS": ["/var/www/templates"],
+        "AUTO_RELOAD": false
+    },
+
+    "LOGGING": {
+        "version": 1,
+        "disable_existing_loggers": false,
+        "formatters": {
+            "json": {
+                "format": "{\"level\": \"{levelname}\", \"time\": \"{asctime}\", \"module\": \"{module}\", \"message\": \"{message}\"}",
+                "style": "{"
+            }
+        },
+        "handlers": {
+            "file": {
+                "class": "logging.handlers.RotatingFileHandler",
+                "filename": "/var/log/cyclone/app.log",
+                "maxBytes": 10485760,
+                "backupCount": 5,
+                "formatter": "json"
+            }
+        },
+        "loggers": {
+            "cyclone": {
+                "handlers": ["file"],
+                "level": "INFO",
+                "propagate": false
+            }
+        }
+    },
+
+    "API_RATE_LIMIT": 100,
+    "EMAIL_BACKEND": "smtp",
+    "ENABLE_DEBUG_TOOLBAR": false,
+    "SSL_VERIFY": true,
+    "SESSION_TIMEOUT": 1800
+}
