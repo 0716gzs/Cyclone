@@ -9,7 +9,7 @@ description = "一个现代化的异步Web后端框架，基于协程和异步I/
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    {name = "Cyclone Team", email = "J0716gzs@163.com"}
+    {name = "0716gzs", email = "J0716gzs@163.com"}
 ]
 maintainers = [
     {name = "0716gzs", email = "J0716gzs@163.com"}

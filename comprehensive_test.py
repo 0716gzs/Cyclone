@@ -47,7 +47,7 @@ def setup_custom_config():
         'PORT': 8888,
         'APP_NAME': 'Cyclone综合测试应用',
         'VERSION': '1.0.0',
-        'AUTHOR': 'Cyclone Team',
+        'AUTHOR': '0716gzs',
         
         # 数据库配置（MySQL测试）
         'DATABASE': {

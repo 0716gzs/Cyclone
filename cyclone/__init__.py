@@ -46,7 +46,7 @@ from .settings import (
 from .database import DatabasePool
 
 __version__ = "0.1.0"
-__author__ = "Cyclone Team"
+__author__ = "0716gzs"
 
 __all__ = [
     # 应用相关
