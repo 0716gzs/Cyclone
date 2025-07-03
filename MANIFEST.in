@@ -1,0 +1,37 @@
+# Include the license file
+include LICENSE
+include LICENSE.txt
+
+# Include documentation
+include README.md
+include CHANGELOG.md
+include CUSTOM_CONFIG_GUIDE.md
+
+# Include requirements
+include requirements.txt
+include pyproject.toml
+
+# Include example files
+include example.py
+include custom_config_example.py
+include comprehensive_test.py
+
+# Include configuration examples
+recursive-include config_examples *.py *.json *.yaml *.yml
+
+# Include type stubs
+include cyclone/py.typed
+
+# Exclude compiled Python files
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude __pycache__
+
+# Exclude development files
+exclude .gitignore
+exclude .env*
+exclude *.log
+exclude .coverage
+recursive-exclude tests *
+recursive-exclude .pytest_cache *
+recursive-exclude .mypy_cache * 

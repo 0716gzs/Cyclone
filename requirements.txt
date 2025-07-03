@@ -1,0 +1,12 @@
+# Cyclone 异步Web框架依赖文件
+# 核心框架不需要额外依赖，只使用Python标准库
+
+# MySQL数据库驱动（必需）
+aiomysql>=0.2.0
+
+# 开发和测试工具（可选）
+# pytest>=7.0.0
+# pytest-asyncio>=0.21.0
+# black>=23.0.0
+# flake8>=6.0.0
+# mypy>=1.0.0
